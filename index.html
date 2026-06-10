@@ -13,6 +13,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      /* Impede a seleção manual de texto por padrão em navegadores */
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
 
     body {
@@ -812,7 +817,7 @@
       <div class="historia-content glass-card">
         <div class="historia-text">
           <p>Lembro como se fosse ontem. Vendo você descendo da escala e dando um chute na bunda do Allan, foi amor a primeira vista.</p>
-          <p>Naquele momento exato, alguma coisa dentro de mim se mexeu, sabe? Foi como se o mundo tivesse pausado para me dizer: "é ela boy rsrs". E eu me apaixonei. Não devagar que era normal na epoca, me apaixonei inteiro, num único olhar.</p>
+          <p>Naquele momento exato, alguma coisa dentro de mim se mexeu, sabe? Foi como se o world tivesse pausado para me dizer: "é ela boy rsrs". E eu me apaixonei. Não devagar que era normal na epoca, me apaixonei inteiro, num único olhar.</p>
           <p>Vieram quatro anos de namoro. Conversas longas, mãos dadas, risadas bobas, planos e a certeza tranquila de que era com você que eu queria compartilhar essa coisa maravilhosa chamada vida.</p>
           <p>Depois veio o nosso "sim". E desde então, todo dia 13 carrega momentos maravilhosos. É o nosso dia. O dia em que viramos um só e ainda assim continuamos sendo tudo de melhor que cada um podia ser.</p>
           <span class="para-sempre">para sempre</span>
@@ -957,6 +962,40 @@
 </main>
 
 <script>
+  // ==================== ANTI-CÓPIA E PROTEÇÃO DO CÓDIGO FONTE ====================
+  
+  // 1. Bloqueia o clique direito do mouse (Impede o "Inspecionar" clássico)
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // 2. Bloqueia atalhos de teclado de desenvolvedor e comandos de cópia
+  document.addEventListener('keydown', event => {
+    // Bloqueia F12
+    if (event.keyCode === 123) {
+      event.preventDefault();
+      return false;
+    }
+    // Bloqueia Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (Ferramentas do Inspetor)
+    if (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) {
+      event.preventDefault();
+      return false;
+    }
+    // Bloqueia Ctrl+U (Ver código fonte da página)
+    if (event.ctrlKey && event.keyCode === 85) {
+      event.preventDefault();
+      return false;
+    }
+    // Bloqueia Ctrl+S (Salvar arquivo HTML no PC)
+    if (event.ctrlKey && event.keyCode === 83) {
+      event.preventDefault();
+      return false;
+    }
+    // Bloqueia Ctrl+C e Ctrl+X (Impedir extrair ou copiar os textos sensíveis da carta)
+    if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 88)) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
   // ==================== REPRODUTOR DE ÁUDIO BLINDADO ====================
   function playMusic() {
     const iframe = document.getElementById('youtubePlayer');
@@ -1121,7 +1160,7 @@
 
   // ==================== CÁLCULO DO CONTADOR DE TEMPO RELATIVO ====================
   function atualizarContador() {
-    const inicio = new Date(2017, 9, 15); // Data fixa do relacionamento base da demo
+    const inicio = new Date(2017, 9, 15);
     const agora = new Date();
     let diff = agora - inicio;
     
