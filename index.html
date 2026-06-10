@@ -268,7 +268,7 @@
       flex-wrap: wrap;
     }
 
-    /* DESIGN DOS BOTÕES (ESTILO PREMIUM APP) */
+    /* DESIGN DOS BOTÕES */
     .btn {
       background: var(--pink-gradient);
       color: #5c3d46;
@@ -315,7 +315,6 @@
       box-shadow: 0 12px 25px rgba(255,255,255,0.25);
     }
 
-    /* BOTÃO EXCLUSIVO DE VENDAS / CHAMADA INTERATIVA */
     .btn-sales {
       background: var(--cta-gradient);
       color: white !important;
@@ -334,7 +333,7 @@
       100% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4); }
     }
 
-    /* ANÚNCIO / COMPRA FLUTUANTE NO RODAPÉ */
+    /* BANNER FIXO DE ANÚNCIO (RODAPÉ) */
     .sales-banner {
       position: fixed;
       bottom: 20px;
@@ -380,7 +379,7 @@
       color: #ff6b6b;
     }
 
-    /* NOVO BLOCO DE ANÚNCIO: VITRINE TÉCNICA */
+    /* VITRINE TÉCNICA */
     .vitrine-features {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -587,35 +586,6 @@
       object-fit: cover;
     }
 
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      color: #2c2c2c;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-      transition: all 0.3s;
-    }
-
-    .slider-arrow:hover {
-      background: white;
-      transform: translateY(-50%) scale(1.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    .slider-arrow.left { left: 15px; }
-    .slider-arrow.right { right: 15px; }
-
     .slider-dots {
       position: absolute;
       bottom: 20px;
@@ -648,165 +618,6 @@
       background: #ff9a9e;
       width: 14px;
       border-radius: 10px;
-    }
-
-    /* MOTIVOS */
-    .motivos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .motivo-card {
-      padding: 2rem;
-    }
-
-    .motivo-card:hover {
-      transform: translateY(-6px);
-      background: white;
-      border-color: rgba(255, 154, 158, 0.3);
-    }
-
-    .motivo-num {
-      font-size: 2.2rem;
-      font-weight: 800;
-      background: var(--pink-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.8rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .motivo-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #4a3a32;
-      font-weight: 500;
-    }
-
-    /* CARTA DE AMOR */
-    .carta-box {
-      padding: 3rem;
-      line-height: 1.9;
-      color: #3d312a;
-      font-size: 1.05rem;
-    }
-    .carta-box p { margin-bottom: 1.5rem; }
-    .carta-assinatura {
-      margin-top: 1.5rem;
-      font-style: italic;
-      color: var(--gold-dark);
-      font-weight: 600;
-    }
-
-    /* CONTADOR WIDGET STYLE */
-    .contador-wrapper {
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .contador-titulo {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--text-soft);
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-    }
-
-    .contador-numeros {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    @media (max-width: 550px) {
-      .contador-numeros { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .contador-bloco {
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 20px;
-      padding: 1.5rem 1rem;
-      border: 1px solid rgba(255,255,255,0.6);
-      box-shadow: inset 0 2px 4px rgba(255,255,255,0.4);
-    }
-
-    .contador-valor {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #3d312a;
-      font-family: 'Playfair Display', serif;
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-
-    .contador-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--text-soft);
-    }
-
-    .contador-dias-total {
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #ff9a9e;
-    }
-
-    /* PLAYER DE MÚSICA */
-    .musica-wrapper {
-      padding: 2.5rem;
-      text-align: center;
-    }
-
-    .musica-artista {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #2c2c2c;
-      margin: 0.5rem 0 1.5rem;
-    }
-
-    /* SEÇÃO FINAL */
-    .final-section {
-      min-height: 85vh;
-      width: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 6rem 2rem;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
-    @media (max-width: 768px) {
-      .final-section { background-attachment: scroll; }
-    }
-
-    .final-content {
-      position: relative;
-      z-index: 3;
-      max-width: 750px;
-      color: white;
-    }
-
-    .frase-final {
-      font-size: 2.2rem;
-      font-family: 'Playfair Display', serif;
-      line-height: 1.5;
-    }
-
-    .frase-final strong {
-      color: #fecfef;
-      font-weight: 600;
     }
 
     /* LIGHTBOX */
@@ -936,7 +747,7 @@
   </div>
 </div>
 
-<!-- BANNER FIXO DE ANÚNCIO (RODAPÉ) COM LINK OFICIAL DO SEU LINKEDIN -->
+<!-- BANNER FIXO DE ANÚNCIO (RODAPÉ) -->
 <div class="sales-banner">
   <div class="sales-info">
     <span class="sales-tag">🔥 PRESENTE EXCLUSIVO</span>
@@ -958,7 +769,7 @@
       <a href="#motivos">Motivos</a>
       <a href="#carta">Carta</a>
       <a href="#musica">Música</a>
-      <!-- ANÚNCIO 1: BOTÃO DE DESTAQUE NAVBAR -->
+      <!-- ANÚNCIO 1: NAVBAR CTA -->
       <a href="https://www.linkedin.com/in/filipe-almeida-38a53b319/" target="_blank" class="nav-cta"><i class="fas fa-shopping-cart"></i> Encomendar Site</a>
     </div>
   </div>
@@ -976,23 +787,23 @@
       <div class="hero-buttons">
         <a href="#historia" class="btn"><i class="fas fa-book-open"></i> NOSSA HISTÓRIA</a>
         <button class="btn btn-outline" id="heroSurprise"><i class="fas fa-sparkles"></i> SOLTAR AMOR</button>
-        <!-- ANÚNCIO 2: SEGUNDO CTA DE ALTA CONVERSÃO NO HERO -->
+        <!-- ANÚNCIO 2: HERO CTA -->
         <a href="https://www.linkedin.com/in/filipe-almeida-38a53b319/" target="_blank" class="btn btn-sales"><i class="fas fa-magic"></i> QUERO UM SITE ASSIM</a>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <!-- 1. NOSSA HISTÓRIA -->
+    <!-- 1. NOSSA HISTÓRIA ROTEIRO ATUALIZADO (TEMA: TREVO) -->
     <section id="historia">
       <h2 class="section-title">A nossa história de amor</h2>
       <div class="section-sub">Como tudo começou.</div>
       <div class="historia-content glass-card">
         <div class="historia-text">
-          <p>Lembro como se fosse ontem. Vendo você descendo da escala e dando um chute na bunda do Allan, foi amor a primeira vista.</p>
-          <p>Naquele momento exato, alguma coisa dentro de mim se mexeu, sabe? Foi como se o world tivesse pausado para me dizer: "é ela boy rsrs". E eu me apaixonei. Não devagar que era normal na epoca, me apaixonei inteiro, num único olhar.</p>
-          <p>Vieram quatro anos de namoro. Conversas longas, mãos dadas, risadas bobas, planos e a certeza tranquila de que era com você que eu queria compartilhar essa coisa maravilhosa chamada vida.</p>
-          <p>Depois veio o nosso "sim". E desde então, todo dia 13 carrega momentos maravilhosos. É o nosso dia. O dia em que viramos um só e ainda assim continuamos sendo tudo de melhor que cada um podia ser.</p>
+          <p>Dizem que encontrar a pessoa certa é uma questão de sorte, mas prefiro chamar de destino. No meio do barulho do mundo, nossos caminhos se cruzaram e tudo ganhou um tom mais leve.</p>
+          <p>Foi amor à primeira vista. Aquele tipo de conexão tranquila que faz a gente perceber que a vida estava guardando o melhor capítulo para o momento exato em que você chegasse.</p>
+          <p>Passamos por risadas soltas, conversas de madrugada e planos que começaram tímidos e viraram a nossa maior realidade. Dividir a rotina com você transformou os dias comuns em momentos raros.</p>
+          <p>O nosso "sim" foi apenas o início de uma caminhada eterna. Todo dia 13 é o nosso lembrete de que ter você por perto acalma o coração e traz paz. Você é, sem dúvidas, o meu porto seguro.</p>
           <span class="para-sempre">para sempre</span>
         </div>
         <div class="historia-side-img">
@@ -1001,35 +812,35 @@
       </div>
     </section>
 
-    <!-- 2. LINHA DO TEMPO -->
+    <!-- 2. LINHA DO TEMPO ROTEIRO ATUALIZADO (TEMA: TREVO) -->
     <section id="linha-tempo">
       <h2 class="section-title">A linha do tempo do nosso amor</h2>
       <div class="section-sub">Cinco momentos que nunca vou esquecer — e tantos outros que ainda virão.</div>
       <div class="timeline-grid">
         <div class="timeline-item glass-card">
-          <div class="timeline-year">VERÃO DE 2018</div>
-          <div class="timeline-title">Primeiro Encontro</div>
-          <div class="timeline-desc">Te vi descendo a escada da igreja. Naquele momento, o tempo parou e eu soube era você.</div>
+          <div class="timeline-year">O PRIMEIRO ENCONTRO</div>
+          <div class="timeline-title">O Cruzamento dos Nossos Caminhos</div>
+          <div class="timeline-desc">Aquele esbarrão do destino que parecia rotina, mas mudou nossa direção para sempre. O tempo pausou para nos apresentar.</div>
         </div>
         <div class="timeline-item glass-card">
-          <div class="timeline-year">OUTUBRO DE 2018</div>
-          <div class="timeline-title">Início do Namoro</div>
-          <div class="timeline-desc">Aquele primeiro "sim" pelo zap, nunca esqueci e nem vou.</div>
+          <div class="timeline-year">O INÍCIO DO NAMORO</div>
+          <div class="timeline-title">O Primeiro "Sim"</div>
+          <div class="timeline-desc">O momento em que os olhares entregaram o que o coração já sabia. O início oficial do nosso nós pelo WhatsApp.</div>
         </div>
         <div class="timeline-item glass-card">
-          <div class="timeline-year">DEZEMBRO DE 2019</div>
-          <div class="timeline-title">Casamento</div>
-          <div class="timeline-desc">Quando resolvemos iniciar as compras para casarmos, cada compra, planos é inesquecivel</div>
+          <div class="timeline-year">MOLDANDO O FUTURO</div>
+          <div class="timeline-title">Construindo Nossa Base</div>
+          <div class="timeline-desc">Entre conversas na madrugada, planos bobos e risadas cúmplices, fomos desenhando o nosso próprio universo e montando nossa casa.</div>
         </div>
         <div class="timeline-item glass-card">
-          <div class="timeline-year">13 DE SETEMBRO DE 2020</div>
-          <div class="timeline-title">O Nosso Sim</div>
-          <div class="timeline-desc">Um dos dias mais importantes. Você de azul, eu admirando tua beleza. Todo dia 13 é eterno, pode ter certeza.</div>
+          <div class="timeline-year">O DIA DO CASAMENTO</div>
+          <div class="timeline-title">O Nosso "Sim" Eterno</div>
+          <div class="timeline-desc">A promessa de caminhar lado a lado na mesma direção. Você de azul radiante, eu admirando sua beleza e celebrando o nosso amor absoluto.</div>
         </div>
         <div class="timeline-item glass-card">
           <div class="timeline-year">HOJE E SEMPRE</div>
-          <div class="timeline-title">Momentos Especiais</div>
-          <div class="timeline-desc">Aniversários, rolês, sextas na cama, manhãs preguiçosas. Cada um deles, é maravilhoso.</div>
+          <div class="timeline-title">O Meu Trevo Particular</div>
+          <div class="timeline-desc">Manhãs preguiçosas, rolês na sexta, piadas internas e a certeza diária de que encontrar você foi a maior sorte da minha vida.</div>
         </div>
       </div>
     </section>
@@ -1060,7 +871,7 @@
       <div class="motivos-grid" id="motivosGrid"></div>
     </section>
 
-    <!-- ANÚNCIO 3: NOVO BLOCO CENTRAL "VITRINE TECNOLÓGICA" (MOSTRA QUE O PRODUTO VALE MUITO) -->
+    <!-- ANÚNCIO 3: VITRINE TECNOLÓGICA COM FOCO EM CONVERSÃO -->
     <section id="comprar">
       <h2 class="section-title">✨ Leve Essa Experiência Para o Seu Amor</h2>
       <div class="section-sub">Surpreenda em datas especiais, aniversários de namoro ou casamento com um produto premium.</div>
@@ -1140,13 +951,13 @@
       </div>
     </section>
 
-    <!-- 7. PLAYER DE MÚSICA -->
+    <!-- 7. PLAYER DE MÚSICA ATUALIZADO PARA TREVO (ANAVITÓRIA FT. TIAGO IORC) -->
     <section id="musica">
       <h2 class="section-title">A nossa música especial</h2>
       <div class="musica-wrapper glass-card">
         <div class="contador-titulo">🎵 TOCANDO AGORA</div>
-        <div class="musica-artista">Conversations in the Dark — John Legend</div>
-        <iframe id="youtubePlayer" width="100%" height="220" src="https://www.youtube.com/embed/qUD2GxTeVcI" title="YouTube player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid var(--glass-border);"></iframe>
+        <div class="musica-artista">Trevo (Tu) — ANAVITÓRIA ft. Tiago Iorc</div>
+        <iframe id="youtubePlayer" width="100%" height="220" src="https://www.youtube.com/embed/ww7S4Wf7GqI" title="YouTube player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid var(--glass-border);"></iframe>
         <button id="playMusicBtn" class="btn"><i class="fas fa-redo"></i> Recarregar Música</button>
       </div>
     </section>
@@ -1157,8 +968,8 @@
     <div class="floating-hearts" id="floatingHeartsFinal"></div>
     <div class="final-content">
       <div class="frase-final">
-        “Se eu pudesse voltar no tempo, escolheria você novamente.<br>
-        E novamente. E novamente.<br>
+        “Tu é trevo de quatro folhas.<br>
+        É manhã de domingo à toa.<br>
         <strong>Te amo para sempre.</strong>
       </div>
     </div>
@@ -1192,11 +1003,11 @@
     if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 88)) { event.preventDefault(); return false; }
   });
 
-  // ==================== REPRODUTOR DE ÁUDIO BLINDADO ====================
+  // ==================== REPRODUTOR DE ÁUDIO ATUALIZADO (TREVO ID) ====================
   function playMusic() {
     const iframe = document.getElementById('youtubePlayer');
     if (iframe) {
-      iframe.src = "https://www.youtube.com/embed/qUD2GxTeVcI?autoplay=1&enablejsapi=1";
+      iframe.src = "https://www.youtube.com/embed/ww7S4Wf7GqI?autoplay=1&enablejsapi=1";
     }
   }
 
@@ -1330,6 +1141,30 @@
   function resetAutoPlay() { clearInterval(slideInterval); startAutoPlay(); }
   startAutoPlay();
 
+  // ==================== SEÇÃO DOS MOTIVOS CONCEITUAIS ====================
+  const motivos = [
+    "Pelo seu sorriso que ilumina meus dias",
+    "Pelo seu coração gigante, generoso e incrivelmente leal.",
+    "Pelas nossas manhãs calmas: café quente e boas risadas divididas.",
+    "Pelas piadas idiotas que só nós achamos graça.",
+    "Pela tranquilidade de segurar sua mão em qualquer lugar.",
+    "Pela sua força inspiradora, mesmo nos momentos mais desafiadores.",
+    "Por transformar qualquer lugar simples em um verdadeiro lar.",
+    "Pelo seu jeito único e autêntico de enxergar o mundo.",
+    "Por ser o meu porto seguro e a minha calmaria no fim do dia.",
+    "Por escolher construir um futuro real do meu lado, todos os dias."
+  ];
+
+  const motifsGrid = document.getElementById('motivosGrid');
+  if (motifsGrid) {
+    motivos.forEach((text, i) => {
+      const card = document.createElement('div');
+      card.className = 'motivo-card glass-card';
+      card.innerHTML = `<div class="motivo-num">${String(i+1).padStart(2,'0')}</div><div class="motivo-text">${text}</div>`;
+      motifsGrid.appendChild(card);
+    });
+  }
+
   // ==================== CÁLCULO DO CONTADOR DE TEMPO RELATIVO ====================
   function atualizarContador() {
     const inicio = new Date(2017, 9, 15);
@@ -1370,7 +1205,7 @@
     });
   });
 
-  // ==================== LIGHTBOX MODAL SCRIPT ====================
+  // ==================== ENCAIXE DO LIGHTBOX EXPANSÍVEL ====================
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImg = document.getElementById('lightboxImg');
   
