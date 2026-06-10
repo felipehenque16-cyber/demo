@@ -26,7 +26,7 @@
       color: #2c2c2c;
       scroll-behavior: smooth;
       overflow-x: hidden;
-      padding-bottom: 100px; /* Espaço para o banner de vendas não cobrir o conteúdo */
+      padding-bottom: 120px; /* Espaço para o banner de vendas não cobrir o conteúdo */
     }
 
     :root {
@@ -171,6 +171,13 @@
       transform: translateY(-1px);
     }
 
+    .nav-links .nav-cta {
+      color: #ff6b6b;
+      font-weight: 700;
+      border-left: 2px solid rgba(255, 154, 158, 0.4);
+      padding-left: 1rem;
+    }
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -261,7 +268,7 @@
       flex-wrap: wrap;
     }
 
-    /* DESIGN DOS BOTÕES ATUALIZADOS (ESTILO PREMIUM APP) */
+    /* DESIGN DOS BOTÕES (ESTILO PREMIUM APP) */
     .btn {
       background: var(--pink-gradient);
       color: #5c3d46;
@@ -311,14 +318,14 @@
     /* BOTÃO EXCLUSIVO DE VENDAS / CHAMADA INTERATIVA */
     .btn-sales {
       background: var(--cta-gradient);
-      color: white;
+      color: white !important;
       box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
       animation: buttonPulse 2s infinite;
     }
 
     .btn-sales:hover {
       box-shadow: 0 15px 30px rgba(255, 107, 107, 0.6);
-      color: white;
+      transform: translateY(-4px);
     }
 
     @keyframes buttonPulse {
@@ -327,15 +334,15 @@
       100% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4); }
     }
 
-    /* ==================== NOVO BANNER DE ANÚNCIO / COMPRA FLUTUANTE ==================== */
+    /* ANÚNCIO / COMPRA FLUTUANTE NO RODAPÉ */
     .sales-banner {
       position: fixed;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       width: 92%;
-      max-width: 800px;
-      background: rgba(255, 255, 255, 0.8);
+      max-width: 850px;
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(25px);
       -webkit-backdrop-filter: blur(25px);
       border: 1.5px solid rgba(255, 154, 158, 0.4);
@@ -344,9 +351,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 2500; /* Acima de tudo, abaixo do lightbox */
+      z-index: 2500;
       box-shadow: 0 15px 45px rgba(255, 154, 158, 0.25);
-      animation: bannerSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) delay;
     }
 
     .sales-info {
@@ -374,6 +380,48 @@
       color: #ff6b6b;
     }
 
+    /* NOVO BLOCO DE ANÚNCIO: VITRINE TÉCNICA */
+    .vitrine-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 16px;
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .feature-item i {
+      font-size: 1.3rem;
+      color: #ff9a9e;
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .feature-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #3d312a;
+      margin-bottom: 2px;
+    }
+
+    .feature-text p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.4;
+      margin-bottom: 0 !important;
+    }
+
     @media (max-width: 768px) {
       .sales-banner {
         flex-direction: column;
@@ -382,35 +430,18 @@
         text-align: center;
         bottom: 15px;
       }
-      .sales-info {
-        text-align: center;
-      }
-      body { padding-bottom: 160px; }
+      .sales-info { text-align: center; }
+      body { padding-bottom: 180px; }
+      .vitrine-features { grid-template-columns: 1fr; }
     }
 
     /* SEÇÕES */
-    section {
-      margin-bottom: 6rem;
-      scroll-margin-top: 110px;
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
     }
 
-    .section-title {
-      font-size: 2.4rem;
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      margin-bottom: 0.5rem;
-      color: #4a3b32;
-      font-weight: 600;
-    }
-
-    .section-sub {
-      text-align: center;
-      color: var(--text-soft);
-      margin-bottom: 3rem;
-      font-size: 0.95rem;
-    }
-
-    /* HISTÓRIA */
     .historia-content {
       padding: 3rem;
       display: flex;
@@ -782,7 +813,7 @@
     .lightbox {
       display: none;
       position: fixed;
-      z-index: 3000; /* Maior que o banner de vendas */
+      z-index: 3000;
       top: 0;
       left: 0;
       width: 100%;
@@ -815,7 +846,7 @@
 
     .btn-celebrate {
       position: fixed;
-      bottom: 110px; /* Subiu para não chocar com o banner de vendas */
+      bottom: 110px;
       right: 25px;
       z-index: 999;
       background: var(--pink-gradient);
@@ -877,7 +908,7 @@
       .section-title { font-size: 1.9rem; }
       .nav-links { display: none; }
       .header { padding: 0.6rem 1.5rem; }
-      .btn-celebrate { bottom: 180px; } /* Ajuste no mobile */
+      .btn-celebrate { bottom: 180px; }
       
       .historia-content {
         flex-direction: column;
@@ -905,14 +936,13 @@
   </div>
 </div>
 
-<!-- BANNER FIXO DE ANÚNCIO COM FOCO EM VENDAS NO LINKEDIN -->
+<!-- BANNER FIXO DE ANÚNCIO (RODAPÉ) COM LINK OFICIAL DO SEU LINKEDIN -->
 <div class="sales-banner">
   <div class="sales-info">
     <span class="sales-tag">🔥 PRESENTE EXCLUSIVO</span>
     <div class="sales-title">Quer um site <span>lindo e interativo</span> como esse para o seu amor?</div>
   </div>
-  <!-- Altere o href para o link direto do seu Perfil ou inbox do LinkedIn -->
-  <a href="https://www.linkedin.com" target="_blank" class="btn btn-sales"><i class="fab fa-linkedin"></i> ENCOMENDAR O MEU</a>
+  <a href="https://www.linkedin.com/in/filipe-almeida-38a53b319/" target="_blank" class="btn btn-sales"><i class="fab fa-linkedin"></i> ENCOMENDAR O MEU</a>
 </div>
 
 <button class="btn-celebrate" id="btnCelebrate" title="Soltar Amor!"><i class="fas fa-heart"></i></button>
@@ -928,6 +958,8 @@
       <a href="#motivos">Motivos</a>
       <a href="#carta">Carta</a>
       <a href="#musica">Música</a>
+      <!-- ANÚNCIO 1: BOTÃO DE DESTAQUE NAVBAR -->
+      <a href="https://www.linkedin.com/in/filipe-almeida-38a53b319/" target="_blank" class="nav-cta"><i class="fas fa-shopping-cart"></i> Encomendar Site</a>
     </div>
   </div>
 </header>
@@ -944,6 +976,8 @@
       <div class="hero-buttons">
         <a href="#historia" class="btn"><i class="fas fa-book-open"></i> NOSSA HISTÓRIA</a>
         <button class="btn btn-outline" id="heroSurprise"><i class="fas fa-sparkles"></i> SOLTAR AMOR</button>
+        <!-- ANÚNCIO 2: SEGUNDO CTA DE ALTA CONVERSÃO NO HERO -->
+        <a href="https://www.linkedin.com/in/filipe-almeida-38a53b319/" target="_blank" class="btn btn-sales"><i class="fas fa-magic"></i> QUERO UM SITE ASSIM</a>
       </div>
     </div>
   </div>
@@ -1026,6 +1060,53 @@
       <div class="motivos-grid" id="motivosGrid"></div>
     </section>
 
+    <!-- ANÚNCIO 3: NOVO BLOCO CENTRAL "VITRINE TECNOLÓGICA" (MOSTRA QUE O PRODUTO VALE MUITO) -->
+    <section id="comprar">
+      <h2 class="section-title">✨ Leve Essa Experiência Para o Seu Amor</h2>
+      <div class="section-sub">Surpreenda em datas especiais, aniversários de namoro ou casamento com um produto premium.</div>
+      <div class="carta-box glass-card" style="text-align: center; background: rgba(255, 240, 240, 0.7);">
+        <p style="font-weight: 600; color: #2c2c2c; font-size: 1.15rem;">
+          Este site é uma demonstração interativa de alta performance desenvolvido por <strong>Filipe Almeida</strong>.
+        </p>
+        <p style="max-width: 650px; margin: 0 auto 1.5rem; font-size: 0.95rem; color: var(--text-soft);">
+          Ao adquirir este template personalizado, você não recebe apenas um código, mas sim uma página exclusiva configurada com as suas fotos, a sua carta, a música do casal e um contador atualizado em tempo real.
+        </p>
+        
+        <div class="vitrine-features">
+          <div class="feature-item">
+            <i class="fas fa-music"></i>
+            <div class="feature-text">
+              <h4>Trilha Sonora Inteligente</h4>
+              <p>Burlar de forma nativa os bloqueios de áudio dos celulares modernos através de uma Splash Screen elegante.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <div class="feature-text">
+              <h4>Proteção Anti-Cópia</h4>
+              <p>Código protegido contra inspeção de elemento, cliques direitos e comandos de cópia para manter a exclusividade.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-mobile-alt"></i>
+            <div class="feature-text">
+              <h4>Design Mobile-First</h4>
+              <p>Interface responsiva inspirada em aplicativos de luxo como o LovePanda, otimizada para iPhone e Android.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <div class="feature-text">
+              <h4>Hospedagem Inclusa</h4>
+              <p>O site vai para o ar de forma vitalícia e rápida, pronto para você enviar o link direto pelo WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://www.linkedin.com/in/filipe-almeida-38a53b319/" target="_blank" class="btn btn-sales" style="margin-top: 2.5rem; padding: 16px 40px;"><i class="fab fa-linkedin"></i> ENTRAR EM CONTATO NO LINKEDIN</a>
+      </div>
+    </section>
+
     <!-- 5. CARTA DE AMOR -->
     <section id="carta">
       <h2 class="section-title">Carta de Amor</h2>
@@ -1095,44 +1176,20 @@
       "O amor é a única coisa que somos capazes de perceber que transcende as dimensões de tempo e espaço."
     </div>
     <div class="copyright">
-      © 2026 - Modelo de Demonstração Premium desenvolvido para Portfólio.
+      © 2026 - Modelo de Demonstração Premium desenvolvido para Portfólio por Filipe Almeida.
     </div>
   </footer>
 </main>
 
 <script>
   // ==================== ANTI-CÓPIA E PROTEÇÃO DO CÓDIGO FONTE ====================
-  
-  // 1. Bloqueia o clique direito do mouse (Impede o "Inspecionar" clássico)
   document.addEventListener('contextmenu', event => event.preventDefault());
-
-  // 2. Bloqueia atalhos de teclado de desenvolvedor e comandos de cópia
   document.addEventListener('keydown', event => {
-    // Bloqueia F12
-    if (event.keyCode === 123) {
-      event.preventDefault();
-      return false;
-    }
-    // Bloqueia Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (Ferramentas do Inspetor)
-    if (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) {
-      event.preventDefault();
-      return false;
-    }
-    // Bloqueia Ctrl+U (Ver código fonte da página)
-    if (event.ctrlKey && event.keyCode === 85) {
-      event.preventDefault();
-      return false;
-    }
-    // Bloqueia Ctrl+S (Salvar arquivo HTML no PC)
-    if (event.ctrlKey && event.keyCode === 83) {
-      event.preventDefault();
-      return false;
-    }
-    // Bloqueia Ctrl+C e Ctrl+X (Impedir extrair ou copiar os textos sensíveis da carta)
-    if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 88)) {
-      event.preventDefault();
-      return false;
-    }
+    if (event.keyCode === 123) { event.preventDefault(); return false; }
+    if (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) { event.preventDefault(); return false; }
+    if (event.ctrlKey && event.keyCode === 85) { event.preventDefault(); return false; }
+    if (event.ctrlKey && event.keyCode === 83) { event.preventDefault(); return false; }
+    if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 88)) { event.preventDefault(); return false; }
   });
 
   // ==================== REPRODUTOR DE ÁUDIO BLINDADO ====================
@@ -1273,30 +1330,6 @@
   function resetAutoPlay() { clearInterval(slideInterval); startAutoPlay(); }
   startAutoPlay();
 
-  // ==================== SEÇÃO DOS MOTIVOS CONCEITUAIS ====================
-  const motivos = [
-    "Pelo seu sorriso que ilumina meus dias",
-    "Pelo seu coração gigante, generoso e incrivelmente leal.",
-    "Pelas nossas manhãs calmas: café quente e boas risadas divididas.",
-    "Pelas piadas idiotas que só nós achamos graça.",
-    "Pela tranquilidade de segurar sua mão em qualquer lugar.",
-    "Pela sua força inspiradora, mesmo nos momentos mais desafiadores.",
-    "Por transformar qualquer lugar simples em um verdadeiro lar.",
-    "Pelo seu jeito único e autêntico de enxergar o mundo.",
-    "Por ser o meu porto seguro e a minha calmaria no fim do dia.",
-    "Por escolher construir um futuro real do meu lado, todos os dias."
-  ];
-
-  const motifsGrid = document.getElementById('motivosGrid');
-  if (motifsGrid) {
-    motivos.forEach((text, i) => {
-      const card = document.createElement('div');
-      card.className = 'motivo-card glass-card';
-      card.innerHTML = `<div class="motivo-num">${String(i+1).padStart(2,'0')}</div><div class="motivo-text">${text}</div>`;
-      motifsGrid.appendChild(card);
-    });
-  }
-
   // ==================== CÁLCULO DO CONTADOR DE TEMPO RELATIVO ====================
   function atualizarContador() {
     const inicio = new Date(2017, 9, 15);
@@ -1304,7 +1337,7 @@
     let diff = agora - inicio;
     
     const segundos = Math.floor(diff / 1000) % 60;
-    const minutos = Math.floor(diff / (1000 * 60)) % 60;
+    const minutes = Math.floor(diff / (1000 * 60)) % 60;
     const horas = Math.floor(diff / (1000 * 60 * 60)) % 24;
     const diasTotal = Math.floor(diff / (1000 * 60 * 60 * 24));
     const anos = Math.floor(diasTotal / 365);
@@ -1317,7 +1350,7 @@
       document.getElementById('meses').textContent = meses;
       document.getElementById('dias').textContent = dias;
       document.getElementById('horas').textContent = horas;
-      document.getElementById('minutos').textContent = minutos;
+      document.getElementById('minutos').textContent = minutes;
       document.getElementById('segundos').textContent = segundos;
       document.getElementById('diasTotal').innerHTML = `✨ ${diasTotal.toLocaleString()} dias de puro amor ✨<br>E cada microssegundo valeu a pena.`;
     }
@@ -1326,7 +1359,7 @@
   setInterval(atualizarContador, 1000);
 
   // ==================== ROLAGEM SUAVE DOS LINKS ====================
-  document.querySelectorAll('.nav-links a, .hero-buttons a').forEach(link => {
+  document.querySelectorAll('.nav-links a:not(.nav-cta), .hero-buttons a:not(.btn-sales)').forEach(link => {
     link.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       if (targetId && targetId.startsWith('#')) {
@@ -1337,7 +1370,7 @@
     });
   });
 
-  // ==================== ENCAIXE DO LIGHTBOX EXPANSÍVEL ====================
+  // ==================== LIGHTBOX MODAL SCRIPT ====================
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImg = document.getElementById('lightboxImg');
   
